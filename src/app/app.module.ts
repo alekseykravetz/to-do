@@ -10,14 +10,19 @@ import { ButtonModule } from 'primeng/button';
 import { TooltipModule } from 'primeng/tooltip';
 import { DropdownModule } from 'primeng/dropdown';
 
-// import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
+import { MessageService } from './message.service';
 
 import { AppComponent } from './app.component';
+import { MessagesComponent } from './messages/messages.component';
+import { TestUiElementsComponent } from './test-ui-elements/test-ui-elements.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MessagesComponent,
+    TestUiElementsComponent
   ],
   imports: [
     BrowserModule,
@@ -27,9 +32,11 @@ import { AppComponent } from './app.component';
     ButtonModule,
     TooltipModule,
     AccordionModule,
-    DropdownModule
+    DropdownModule,
+
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,24 @@
+<button pButton type="button" label="Click" (click)="handleClick(click)">
+</button>
+<p-button label="Click" (onClick)="handleClick(click)"></p-button>
+
+<button type="button" (click)="count()" pButton label="Danger" class="ui-button-danger"></button>
+
+<button #myB pButton type="button" (click)="count()" icon="fa fa-chevron-up" iconPos="right" label="Click"></button>
+<button pButton type="button" (click)="count()" icon="fa-close" iconPos="right" label="Click"></button>
+
+<input type="text" pTooltip="Enter your username">
+
+<p-dropdown [options]="cities" [(ngModel)]="selectedCity" placeholder="Select a Car" showClear="true" (onChange)="dropdownSelectionChanged()"></p-dropdown>
+
+<p-accordion>
+  <p-accordionTab header="Header 1">
+    Content 1
+  </p-accordionTab>
+  <p-accordionTab header="Header 2">
+    Content 2
+  </p-accordionTab>
+  <p-accordionTab header="Header 3">
+    Content 3
+  </p-accordionTab>
+</p-accordion>
