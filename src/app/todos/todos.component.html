@@ -2,17 +2,25 @@
 
   <!-- toolbar -->
   <div class="ui-g-12">
+
     <div class="ui-g">
-      <div class="ui-g-6">
+      <div class="ui-g-5">
         <span class="ui-float-label">
             <input id="float-input" type="text" size="30" pInputText [(ngModel)]="newTitle"> 
             <label for="float-input">Todo title</label>
         </span>
       </div>
-      <div class="ui-g-6">
-        <p-button label="Add" (onClick)="addTodo()" [disabled]="isNewTitleExist()"></p-button>
+      <div class="ui-g-5">
+        <span class="ui-float-label">
+            <textarea [(ngModel)]="newDescription" [rows]="2" [cols]="30" pInputTextarea autoResize="autoResize"></textarea>
+            <label for="float-input">Todo description</label>
+        </span>
+      </div>
+      <div class="ui-g-2">
+        <p-button label="Add" (onClick)="addTodo()" [disabled]="isNewTitleExist()" icon="fa fa-reply fa-fw"></p-button>
       </div>
     </div>
+
   </div>
 
   <!-- todos -->

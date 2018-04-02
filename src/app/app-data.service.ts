@@ -8,9 +8,9 @@ export class AppDataService {
 
   constructor() {
     this.todos = [];
-    this.todos.push({ title: 'first title', checked: false });
-    this.todos.push({ title: 'second title', checked: false });
-    this.todos.push({ title: 'third title', checked: false });
+    this.todos.push({ title: 'first title', description: 'first description', checked: false } as ITodoItem);
+    this.todos.push({ title: 'second title', description: 'second description', checked: false } as ITodoItem);
+    this.todos.push({ title: 'third title', description: 'third description', checked: false } as ITodoItem);
   }
 
 }

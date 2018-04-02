@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/todos', pathMatch: 'full' },
   { path: 'testui', component: TestUiElementsComponent },
   { path: 'todos', component: TodosComponent },
+  { path: 'todoitem/:title', component: TodoItemComponent },
   { path: 'todoitem', component: TodoItemComponent }
 ];
 

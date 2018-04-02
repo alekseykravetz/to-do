@@ -10,6 +10,7 @@ import { MessageService } from '../message.service';
 export class TodosComponent implements OnInit {
 
   newTitle = '';
+  newDescription = '';
 
   constructor(
     public dataService: AppDataService,
@@ -20,13 +21,14 @@ export class TodosComponent implements OnInit {
 
   addTodo() {
     this.messageService.add('addTodo() - ' + this.newTitle);
-    this.dataService.todos.push({ title: this.newTitle, checked: false });
+    this.dataService.todos.push({ title: this.newTitle, description: this.newDescription, checked: false });
     this.newTitle = '';
+    this.newDescription = '';
   }
 
   isNewTitleExist() {
     this.messageService.add('isNewTitleExist() - ' + this.newTitle);
     return this.newTitle === '';
-
   }
+
 }

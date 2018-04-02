@@ -17,7 +17,8 @@ export class MessagesComponent implements OnInit {
   }
 
   printAppData() {
-this.dataService.todos.forEach(todo => this.messageService.add(`title: ${todo.title} checked: ${todo.checked}`));
+    this.dataService.todos
+      .forEach(todo => this.messageService.add(`Title: ${todo.title} Description: ${todo.description} Checked: ${todo.checked}`));
   }
 
 }

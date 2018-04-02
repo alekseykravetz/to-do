@@ -1,6 +1,6 @@
 <div *ngIf="todo" class="ui-g">
   <div class="ui-g-6">
-    {{ todo.title }}
+    <a routerLink="/todoitem/{{todo.title}}">{{ todo.title }}</a>
   </div>
   <div class="ui-g-6">
     <p-checkbox [(ngModel)]="todo.checked" binary="true"></p-checkbox>
