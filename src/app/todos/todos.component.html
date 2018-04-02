@@ -1,0 +1,25 @@
+<div class="ui-g">
+
+  <!-- toolbar -->
+  <div class="ui-g-12">
+    <div class="ui-g">
+      <div class="ui-g-6">
+        <span class="ui-float-label">
+            <input id="float-input" type="text" size="30" pInputText [(ngModel)]="newTitle"> 
+            <label for="float-input">Todo title</label>
+        </span>
+      </div>
+      <div class="ui-g-6">
+        <p-button label="Add" (onClick)="addTodo()" [disabled]="isNewTitleExist()"></p-button>
+      </div>
+    </div>
+  </div>
+
+  <!-- todos -->
+  <div class="ui-g-12">
+    <div *ngFor="let todo of dataService.todos">
+      <app-todo-item [todo]="todo"></app-todo-item>
+    </div>
+  </div>
+
+</div>

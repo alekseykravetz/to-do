@@ -1,7 +1,28 @@
-<h1>{{title}}</h1>
+
+<div class="ui-g">
+
+    <!-- application title -->
+    <div class="ui-g-12">
+        <h1>{{title}}</h1>
+    </div>
+
+    <!-- application content -->
+    <div class="ui-g-12">
+        <router-outlet></router-outlet>
+    </div>
+    
+</div>
+
+
 <nav>
     <a routerLink="/dashboard">Dashboard</a>
     <a routerLink="/heroes">Heroes</a>
 </nav>
-<router-outlet></router-outlet>
+
+
+
+
+
+
+
 <app-messages></app-messages>

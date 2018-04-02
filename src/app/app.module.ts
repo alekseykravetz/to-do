@@ -9,20 +9,27 @@ import { MenuItem, SelectItem } from 'primeng/api';                 // api
 import { ButtonModule } from 'primeng/button';
 import { TooltipModule } from 'primeng/tooltip';
 import { DropdownModule } from 'primeng/dropdown';
+import { CheckboxModule } from 'primeng/checkbox';
+import {InputTextModule} from 'primeng/inputtext';
 
 import { AppRoutingModule } from './app-routing.module';
 import { MessageService } from './message.service';
+import { AppDataService } from './app-data.service';
 
 import { AppComponent } from './app.component';
 import { MessagesComponent } from './messages/messages.component';
 import { TestUiElementsComponent } from './test-ui-elements/test-ui-elements.component';
+import { TodosComponent } from './todos/todos.component';
+import { TodoItemComponent } from './todo-item/todo-item.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MessagesComponent,
-    TestUiElementsComponent
+    TestUiElementsComponent,
+    TodosComponent,
+    TodoItemComponent
   ],
   imports: [
     BrowserModule,
@@ -33,10 +40,15 @@ import { TestUiElementsComponent } from './test-ui-elements/test-ui-elements.com
     TooltipModule,
     AccordionModule,
     DropdownModule,
+    CheckboxModule,
+    InputTextModule,
 
     AppRoutingModule
   ],
-  providers: [MessageService],
+  providers: [
+    MessageService,
+    AppDataService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
