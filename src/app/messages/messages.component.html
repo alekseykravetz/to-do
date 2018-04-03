@@ -2,8 +2,8 @@
 <div *ngIf="messageService.messages.length !== 0">
 
   <h2>Messages</h2>
-  <button class="clear" (click)="messageService.clear()">clear</button>
+  <button pButton label="clear" (click)="messageService.clear()"></button>
+  <button pButton label="print App-Data" (click)="printAppData()"></button>
   <div *ngFor="let message of messageService.messages">{{ message }}</div>
-  <button (click)="printAppData()">Print App Data</button>
 
 </div>

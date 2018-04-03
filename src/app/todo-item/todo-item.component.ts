@@ -11,8 +11,8 @@ import { AppDataService } from '../app-data.service';
 })
 export class TodoItemComponent implements OnInit {
 
-  @Input()
-  todo: ITodoItem;
+  @Input() todo: ITodoItem;
+  isDetailedView = false;
 
   constructor(
     private dataService: AppDataService,
@@ -20,12 +20,15 @@ export class TodoItemComponent implements OnInit {
     private location: Location) { }
 
   ngOnInit() {
+    const title = this.route.snapshot.paramMap.get('title');
+    if (title !== null) {
+      this.todo = this.dataService.todos.find(todo => todo.title === title);
+      this.isDetailedView = true;
+    }
+  }
 
-    /*     const title = this.route.snapshot.paramMap.get('title');
-        if (title !== '') {
-          this.todo = this.dataService.todos.find(todo => todo.title === title);
-        } */
-
+  goBack() {
+    this.location.back();
   }
 
 }

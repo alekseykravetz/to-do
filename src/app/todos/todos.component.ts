@@ -21,7 +21,7 @@ export class TodosComponent implements OnInit {
 
   addTodo() {
     this.messageService.add('addTodo() - ' + this.newTitle);
-    this.dataService.todos.push({ title: this.newTitle, description: this.newDescription, checked: false });
+    this.dataService.todos.push({ title: this.newTitle, description: this.newDescription, checked: false, dueDate: new Date(2015, 5, 24) });
     this.newTitle = '';
     this.newDescription = '';
   }

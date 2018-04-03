@@ -5,4 +5,15 @@
   <div class="ui-g-6">
     <p-checkbox [(ngModel)]="todo.checked" binary="true"></p-checkbox>
   </div>
+
+  <div *ngIf="isDetailedView" class="ui-g-12">
+    <textarea [(ngModel)]="todo.description" [rows]="2" [cols]="30" pInputTextarea autoResize="autoResize"></textarea>
+  </div>
+  <div *ngIf="isDetailedView" class="ui-g-6">
+    <p-calendar [(ngModel)]="todo.dueDate" [inline]="false" [showIcon]="true"></p-calendar>
+  </div>
+  <div *ngIf="isDetailedView" class="ui-g-6 ui-g-offset-10">
+    <p-button label="Back" (onClick)="goBack()"></p-button>
+  </div>
+
 </div>

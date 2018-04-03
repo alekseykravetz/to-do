@@ -12,6 +12,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { CheckboxModule } from 'primeng/checkbox';
 import {InputTextModule} from 'primeng/inputtext';
 import {InputTextareaModule} from 'primeng/inputtextarea';
+import {CalendarModule} from 'primeng/calendar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { MessageService } from './message.service';
@@ -44,6 +45,7 @@ import { TodoItemComponent } from './todo-item/todo-item.component';
     CheckboxModule,
     InputTextModule,
     InputTextareaModule,
+    CalendarModule,
 
     AppRoutingModule
   ],
