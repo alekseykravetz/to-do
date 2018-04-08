@@ -1,1 +1,4 @@
 /* You can add global styles to this file, and also import other style files */
+.ui-float-label.app-two-row-float-label label {
+    top: 25%
+}
