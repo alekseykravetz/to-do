@@ -22,7 +22,14 @@ import { AppComponent } from './app.component';
 import { MessagesComponent } from './messages/messages.component';
 import { TestUiElementsComponent } from './test-ui-elements/test-ui-elements.component';
 import { TodosComponent } from './todos/todos.component';
+import { TodosItemComponent } from './todos-item/todos-item.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
+
+import { environment } from '../environments/environment';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireStorageModule } from 'angularfire2/storage';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 
 
 @NgModule({
@@ -31,7 +38,8 @@ import { TodoItemComponent } from './todo-item/todo-item.component';
     MessagesComponent,
     TestUiElementsComponent,
     TodosComponent,
-    TodoItemComponent
+    TodoItemComponent,
+    TodosItemComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +55,12 @@ import { TodoItemComponent } from './todo-item/todo-item.component';
     InputTextareaModule,
     CalendarModule,
 
-    AppRoutingModule
+    AppRoutingModule,
+
+    AngularFireModule.initializeApp(environment.firebase, 'to-do'),
+    AngularFirestoreModule, // imports firebase/firestore, only needed for database features
+    AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
+    AngularFireStorageModule // imports firebase/storage only needed for storage features
   ],
   providers: [
     MessageService,

@@ -4,4 +4,5 @@ export interface ITodoItem {
     checked: boolean;
     description: string;
     dueDate: Date;
+    id: string;
 }

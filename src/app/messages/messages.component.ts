@@ -1,3 +1,4 @@
+import { ITodoItem } from './../todo-item';
 import { Component, OnInit } from '@angular/core';
 import { MessageService } from '../message.service';
 import { AppDataService } from '../app-data.service';
@@ -17,8 +18,13 @@ export class MessagesComponent implements OnInit {
   }
 
   printAppData() {
-    this.dataService.todos
-      .forEach(todo => this.messageService.add(`Title: ${todo.title} Description: ${todo.description} Checked: ${todo.checked}`));
+     this.dataService.getTodos().subscribe(todos => {
+       todos.forEach(todo => {
+         const thisTodo = todo as ITodoItem;
+         this.messageService.add(`Title: ${thisTodo.title} Description: ${thisTodo.description} Checked: ${thisTodo.checked}`);
+       });
+     });
+
   }
 
 }

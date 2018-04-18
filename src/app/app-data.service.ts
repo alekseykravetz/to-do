@@ -1,31 +1,31 @@
 import { Injectable } from '@angular/core';
 import { ITodoItem } from './todo-item';
+import { AngularFirestore } from 'angularfire2/firestore';
+import { Observable } from '@firebase/util';
+
 
 @Injectable()
 export class AppDataService {
 
-  todos: ITodoItem[];
+  constructor(
+    public db: AngularFirestore) {
+  }
 
-  constructor() {
-    this.todos = [];
-    this.todos.push({
-      title: 'first title',
-      description: 'first description',
-      checked: false,
-      dueDate: new Date(2015, 5, 24)
-    } as ITodoItem);
-    this.todos.push({
-      title: 'second title',
-      description: 'second description',
-      checked: false,
-      dueDate: new Date(2015, 5, 24)
-    } as ITodoItem);
-    this.todos.push({
-      title: 'third title',
-      description: 'third description',
-      checked: false,
-      dueDate: new Date(2015, 5, 24)
-    } as ITodoItem);
+  getTodos() {
+    return this.db.collection('/todos').valueChanges();
+  }
+
+  addTodo(todoItem: ITodoItem) {
+    todoItem.id = this.db.createId();
+    return this.db.collection('/todos').doc(todoItem.id).set(todoItem);
+  }
+
+  updateTodo(todoItem: ITodoItem) {
+    return this.db.collection('/todos').doc(todoItem.id).set(todoItem);
+  }
+
+  getTodo(id: string) {
+    return this.db.doc<ITodoItem>('/todos/' + id).valueChanges();
   }
 
 }
