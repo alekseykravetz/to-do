@@ -10,9 +10,9 @@ import { ButtonModule } from 'primeng/button';
 import { TooltipModule } from 'primeng/tooltip';
 import { DropdownModule } from 'primeng/dropdown';
 import { CheckboxModule } from 'primeng/checkbox';
-import {InputTextModule} from 'primeng/inputtext';
-import {InputTextareaModule} from 'primeng/inputtextarea';
-import {CalendarModule} from 'primeng/calendar';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputTextareaModule } from 'primeng/inputtextarea';
+import { CalendarModule } from 'primeng/calendar';
 
 import { AppRoutingModule } from './app-routing.module';
 import { MessageService } from './message.service';
@@ -20,7 +20,6 @@ import { AppDataService } from './app-data.service';
 
 import { AppComponent } from './app.component';
 import { MessagesComponent } from './messages/messages.component';
-import { TestUiElementsComponent } from './test-ui-elements/test-ui-elements.component';
 import { TodosComponent } from './todos/todos.component';
 import { TodosItemComponent } from './todos-item/todos-item.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
@@ -36,10 +35,9 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
   declarations: [
     AppComponent,
     MessagesComponent,
-    TestUiElementsComponent,
     TodosComponent,
+    TodosItemComponent,
     TodoItemComponent,
-    TodosItemComponent
   ],
   imports: [
     BrowserModule,
@@ -60,11 +58,11 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
     AngularFireModule.initializeApp(environment.firebase, 'to-do'),
     AngularFirestoreModule, // imports firebase/firestore, only needed for database features
     AngularFireAuthModule, // imports firebase/auth, only needed for auth features,
-    AngularFireStorageModule // imports firebase/storage only needed for storage features
+    AngularFireStorageModule, // imports firebase/storage only needed for storage features
   ],
   providers: [
     MessageService,
-    AppDataService
+    AppDataService,
   ],
   bootstrap: [AppComponent]
 })
